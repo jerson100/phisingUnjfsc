@@ -1,4 +1,3 @@
-require('colors');
 const mongoose= require('mongoose');
 
 const connection = async () => {
@@ -8,9 +7,9 @@ const connection = async () => {
             useUnifiedTopology: true, 
             useNewUrlParser: true
         });
-        console.log("DB Connected".green);
+        console.log("DB Connected");
     }catch(e){
-        console.log("No se pudo conectar la base de datos".red);
+        console.log("No se pudo conectar la base de datos");
     }
 };
 
