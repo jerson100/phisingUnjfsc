@@ -4,8 +4,8 @@
   "description": "Proyecto de la unjfsc - pishing login",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon node src/index.js",
-    "start": "cross-env NODE_ENV=production node src/index.js"
+    "start": "cross-env NODE_ENV=production node src/index.js",
+    "dev": "cross-env NODE_ENV=development nodemon node src/index.js"
   },
   "author": "Jerson Omar, Ramírez Ortiz",
   "license": "ISC",
