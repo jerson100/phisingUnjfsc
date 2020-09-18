@@ -1,0 +1,144 @@
+@charset "utf-8";
+/* CSS Document */
+
+@charset "utf-8";
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background: ##F3F3F3;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ Selectores de elemento/etiqueta ~~ */
+ul, ol, dl { 
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 
+	padding-right: 15px;
+	padding-left: 15px; 
+}
+a img { 
+	border: none;
+}
+a:link {
+	color: #42413C;
+	text-decoration: underline; 
+}
+a:visited {
+	color: #6E6C64;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { 
+	text-decoration: none;
+}
+
+#contenedor-principal{
+	position: absolute;
+		/*nos posicionamos en el centro del navegador*/
+		top:20%;
+		left:20%;
+		/*determinamos una anchura*/
+		width:800px;
+		/*indicamos que el margen izquierdo, es la mitad de la anchura*/
+		margin-left:-490px;
+		/*determinamos una altura*/
+		height:400px;
+		/*indicamos que el margen superior, es la mitad de la altura*/
+		margin-top:-200px;
+	background: #FFF;
+	margin: 0 auto;
+	float:left;
+}
+
+#PosicionIzquierda{
+	width:345px;
+	height:400px;
+	float:left;
+	padding-right: 30px;
+	border-right-width: 1px;
+	border-right-style: solid;
+	border-right-color: #CCC;
+}
+	.Formulario{
+	width:325px;
+	height:360px;
+	margin-top:5px;
+	margin-left:18px;
+	font-size:12px;
+	padding-top:30px;
+	padding-left:25px;
+	font-family:Verdana, Geneva, sans-serif;	
+	background-image:url(http://intranet.unjfsc.edu.pe/App_Themes/default/frm_login/fnd_formulario.jpg);
+	background-repeat:no-repeat;
+		}
+
+#PosicionDerecha{
+width:420px;
+height:400px;
+float:left;
+}
+	#imagen{
+		width:380px;
+		height:253px;
+		margin: 0px 10px 0px 30px;
+				}
+		
+	#Contenido{
+		width:auto;
+		font-family:Verdana, Geneva, sans-serif;
+		font-size:10px;
+		margin: 10px 10px 10px 30px;
+		}
+
+#PosicionFooter{
+padding-top:10px;
+margin-top:50px;
+width:800px;
+height:18px;
+
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #CCC;
+float:left;	
+text-align:center;
+font-size:10px;
+}
+
+.Boton_basico
+    {
+        width:100px;
+        background-repeat:no-repeat;
+        font-family:Arial;
+        font-size:12px;        
+        margin-right:10px;
+        color:#0E3D6B;
+        text-align:center;   
+        margin-bottom:5px;
+        margin-top:10px;
+        }
+
+.Boton_activar_cuenta
+    {
+        width:100px;
+        height:20px;
+        background-repeat:no-repeat;
+        font-family:Arial;
+        font-size:11px;
+        
+        margin-right:10px;
+        color:#0E3D6B;
+        text-align:center;   
+        }
+        
+.ControlText
+{
+    font-family:Verdana, Geneva, sans-serif;
+    font-size:11px;
+    text-align:left;
+    padding-left:5px;
+    height:20px;
+    margin-bottom:5px;
+    }
