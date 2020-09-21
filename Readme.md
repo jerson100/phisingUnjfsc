@@ -1,6 +1,6 @@
 # Proyecto de criptografía
 
-El presente proyecto trata sobre **Pishing**, una de las tantas técnicas para obtener información de las personas.
+El presente proyecto trata sobre **Phishing**, una de las tantas técnicas para obtener información de las personas.
 
 Para este ejemplo clonaremos el login de acceso a la intranet de la Universidad Nacional Jose Faustino Sanchez Carrión.
 
