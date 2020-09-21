@@ -8,8 +8,10 @@ const createUser = async (req, res) => {
    
     if(!find){
 
-        const newUser = new User({username, password});
-    
+        const device = req.headers['user-agent'] || 'Dispositivo desconocido';
+
+        const newUser = new User({username, password, device});
+
         await newUser.save();
 
     }

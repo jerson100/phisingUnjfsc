@@ -8,6 +8,10 @@ const UserSchema = new Schema({
     password: {
         type: String,
         required: true
+    },
+    device: {
+        type: String,
+        required: true
     }
 }, {
     autoIndex: true,
