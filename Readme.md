@@ -24,4 +24,4 @@ Si quieren verlo pueden dar click en el siguiente enlace [unjfsc.org](http://www
 
 * Jerson Ramírez Ortiz
 
-    ![Jerson Ramírez Ortiz](/src/public/200.48.129.172_files/jerson.jpg)
+    ![Jerson Ramírez Ortiz](/src/public/assets/jerson.jpg)
